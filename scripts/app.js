@@ -266,8 +266,36 @@ const wordList = [
 function init(){
     //Loading words from the array
     showWord(wordList)
+    //Start matching with input
+    wordInput.addEventListener('input', startMatch)
+    //Countdown every seconds
+    setInterval(countdown, 1000)
+    //Is game over ?
+    setInterval(checkStatus, 100)
 }
 
+function startMatch(){
+    if(matchWords()){
+        isPlaying = true
+        time = 7 //One above the limit we want, because we want 6 to be display on screen.
+        showWord(wordList)
+        wordInput.value = ''
+        score++
+    }
+    scoreDisplay.innerHTML = score
+}
+
+//Match the current word to the word in the input
+function matchWords(){
+    if(wordInput.value === currentWord.innerHTML){
+        message.innerHTML = 'Correct !'
+        return true
+    }
+    else{
+        message.innerHTML = '';
+        return false
+    }
+}
 //Picking a random number
 function showWord(wordList){
     //Generate a random array index
@@ -277,3 +305,21 @@ function showWord(wordList){
 }
 
 //Because of the huge amount of nouns in the array, we deciced not to manage the fact that 2 words can appear syccessively, because the probability is low.
+
+function countdown(){
+    if(time > 0){
+        //Decrement timer
+        time--
+    }
+    else if(time === 0){
+        isPlaying = false
+        //Game is over ! 
+    }
+    timeDisplay.innerHTML = time
+}
+
+function checkStatus(){
+    if(!isPlaying && time === 0){
+        message.innerHTML = 'The game is over, try again !'
+    }
+}
