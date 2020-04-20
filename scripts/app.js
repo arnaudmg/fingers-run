@@ -2,7 +2,17 @@ window.addEventListener('load',init)
 
 // Globals variables
 
-let time = 6
+//Available levels
+const levels = {
+    easy: 5,
+    medium: 3,
+    hard: 2
+}
+
+// Change levels
+const currentLevel = levels.easy
+
+let time = currentLevel
 let score = 0
 let isPlaying
 
@@ -277,7 +287,7 @@ function init(){
 function startMatch(){
     if(matchWords()){
         isPlaying = true
-        time = 7
+        time = currentLevel + 1
         //One above the limit we want, because we want 6 to be display on screen.
         showWord(wordList)
         wordInput.value = ''
