@@ -6,11 +6,11 @@ window.addEventListener('load',init)
 const levels = {
     easy: 5,
     medium: 3,
-    hard: 2
+    hard: 1
 }
 
 // Change levels
-const currentLevel = levels.easy
+const currentLevel = levels.medium
 
 let time = currentLevel
 let score = 0
@@ -300,7 +300,7 @@ function startMatch(){
     else{
         scoreDisplay.innerHTML = score
     }
-    scoreDisplay.innerHTML = score
+
 }
 
 //Match the current word to the word in the input
