@@ -20,6 +20,7 @@ let isPlaying
 
 const wordInput = document.querySelector('#word-input');
 const currentWord = document.querySelector('#current-word');
+const futureWord = document.querySelector('#future-word');
 const scoreDisplay = document.querySelector('#score');
 const timeDisplay = document.querySelector('#time');
 const message = document.querySelector('#message');
@@ -276,6 +277,7 @@ const wordList = [
 function init(){
     //Loading words from the array
     showWord(wordList)
+    showFutureWord(wordList)
     //Start matching with input
     wordInput.addEventListener('input', startMatch)
     //Countdown every seconds
@@ -290,6 +292,7 @@ function startMatch(){
         time = currentLevel + 1
         //One above the limit we want, because we want 6 to be display on screen.
         showWord(wordList)
+        showFutureWord(wordList)
         wordInput.value = ''
         score++
     }
@@ -322,7 +325,10 @@ function showWord(wordList){
     //Output a random word
     currentWord.innerHTML  = wordList[randomIndex]
 }
-
+function showFutureWord(wordList){
+    const FutureRandomIndex = Math.floor(Math.random() * wordList.length)
+    futureWord.innerHTML = wordList[FutureRandomIndex]
+}
 //Because of the huge amount of nouns in the array, we deciced not to manage the fact that 2 words can appear successively, because the probability is low.
 function countdown(){
     if(time > 0){
@@ -339,6 +345,6 @@ function countdown(){
 function checkStatus(){
     if(!isPlaying && time === 0){
         message.innerHTML = 'The game is over, try again !'
-        score = -1 //to be more fair, when u loose, the first word u type'll not give u a point, thanks to that.
+        score = -1 //to be more fair, when u loose, the next first word u type'll not give u a point, thanks to that.
     }
 }
