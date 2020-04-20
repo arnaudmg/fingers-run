@@ -277,10 +277,18 @@ function init(){
 function startMatch(){
     if(matchWords()){
         isPlaying = true
-        time = 7 //One above the limit we want, because we want 6 to be display on screen.
+        time = 7
+        //One above the limit we want, because we want 6 to be display on screen.
         showWord(wordList)
         wordInput.value = ''
         score++
+    }
+    //If score is -1, display 0 (better UX)
+    if(score === -1){
+        scoreDisplay.innerHTML = 0
+    }
+    else{
+        scoreDisplay.innerHTML = score
     }
     scoreDisplay.innerHTML = score
 }
@@ -296,6 +304,7 @@ function matchWords(){
         return false
     }
 }
+
 //Picking a random number
 function showWord(wordList){
     //Generate a random array index
@@ -304,8 +313,7 @@ function showWord(wordList){
     currentWord.innerHTML  = wordList[randomIndex]
 }
 
-//Because of the huge amount of nouns in the array, we deciced not to manage the fact that 2 words can appear syccessively, because the probability is low.
-
+//Because of the huge amount of nouns in the array, we deciced not to manage the fact that 2 words can appear successively, because the probability is low.
 function countdown(){
     if(time > 0){
         //Decrement timer
@@ -321,5 +329,6 @@ function countdown(){
 function checkStatus(){
     if(!isPlaying && time === 0){
         message.innerHTML = 'The game is over, try again !'
+        score = -1 //to be more fair, when u loose, the first word u type'll not give u a point, thanks to that.
     }
 }
