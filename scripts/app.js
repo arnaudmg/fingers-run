@@ -288,10 +288,11 @@ function init(){
 
 function startMatch(){
     if(matchWords()){
+    	console.log("match")
         isPlaying = true
         time = currentLevel + 1
         //One above the limit we want, because we want 6 to be display on screen.
-        showWord(wordList)
+        currentWord.innerHTML = futureWord.innerHTML
         showFutureWord(wordList)
         wordInput.value = ''
         score++
