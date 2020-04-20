@@ -1,5 +1,7 @@
 .container{
     margin-top: 10%;
+    display: none;
+    animation: 1s ease-out 0s 1 slideInFromLeft;
 }
 
 .bd-left{
@@ -15,3 +17,45 @@ border-bottom: 13px solid transparent;
 border-left: 13px solid #343A40;
 top: 158px; 
 }
+
+#preloader{
+    position: absolute;
+    top: calc(50% - 30px);
+    left: calc(50% - 30px);
+    z-index: 1000;
+    color:white;
+    display: block;
+    
+}
+
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateY(-100%);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+
+svg{
+    width: 3.75em;
+    animation: 1.5s spin ease infinite;
+}
+  
+.ring{
+    fill: none;
+    stroke: hsla(341, 97%, 59%, 0.3);
+    stroke-width: 2;
+}
+  
+.ball{
+    fill: #fc2f70;
+    stroke: none;
+}
+  
+@keyframes spin{
+    to {
+      transform: rotate(360deg);
+    }
+}
+  

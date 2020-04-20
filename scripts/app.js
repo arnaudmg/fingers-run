@@ -1,4 +1,10 @@
 window.addEventListener('load',init)
+window.setTimeout("preloading()", 1900);
+
+function preloading(){
+    document.getElementById("preloader").style.display= "none";
+    document.querySelector(".container").style.display= "block"
+}
 
 // Globals variables
 
@@ -10,6 +16,7 @@ const levels = {
 }
 
 // Change levels
+
 const currentLevel = levels.medium
 
 let time = currentLevel
