@@ -28,15 +28,6 @@ top: 158px;
     
 }
 
-@keyframes slideInFromLeft {
-    0% {
-      transform: translateY(-100%);
-    }
-    100% {
-      transform: translateY(0);
-    }
-  }
-
 svg{
     width: 3.75em;
     animation: 1.5s spin ease infinite;
@@ -58,4 +49,14 @@ svg{
       transform: rotate(360deg);
     }
 }
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
   
