@@ -11,7 +11,7 @@
 <body>
   <div class="toggling">
     <label class="switch" for="checkbox" title="Change color scheme to dark mode">
-      <input type="checkbox" id="checkbox" />
+      <input type="checkbox" id="checkbox" onclick="MyFunction()"/>
       <div class="slider round"></div>
       <div class="toggle-moon">🌙</div>
       <div class="toggle-sun">☀️</div>
@@ -27,31 +27,21 @@
      <div class="buttonPlay">
        <a href="#" class="play">Play</a>
      </div>
-
-    <!--button dark mode-->
-    <!-- <div class="theme-switch-wrapper">
-      <label class="theme-switch" for="checkbox" >
-        <input type="checkbox" id="checkbox" onclick="myFunction()">
-        <div class="slider round"></div>
-      </label>
-        <img src="images/moon.png" alt="mode night" class="luneimg">
-    </div> -->
-
-    <div class="icon-scroll"></div>
+    <a href="#firstSection"><div class="icon-scroll"></div></a>
 
    </div>
  
 <!--Section 1; concept du jeu-->
 
    <section class="section1">
-    <section class="content-section1">
+    <div class="content-section1" id="firstSection">
         <h3 data-aos="fade-right">Le concept :</h3>
         <p data-aos="fade-up"> Vous amusez est la priorité. Être capable de taper des mots aléatoires le plus vite
             possible et ne pas se tromper est le but ! Mais derrière ce jeu divertissant, il y a un objectif plus
             profond. Pour les personnes dyslexiques l’ordinateur est une aide précieuse pour écrire. Cependant ils
             doivent apprendre à taper le plus vite possible. Et pour ça, nous proposons d’associer la dactylographie
             au jeu, pour un apprentissage amusant ! </p>
-    </section>
+      </div>
 </section>
 
 <!-- Fin de Section 1-->
