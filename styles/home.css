@@ -203,7 +203,42 @@ p{
   width: 100%;
   background: url("../images/figureDarkMode.svg") ;
   background-size: cover ;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; 
+}
 
+h2{
+  font-family: 'Julius Sans One', sans-serif;
+  color: #000000;
+  font-size: 2.8rem;
+  letter-spacing: 0.02rem;
+  line-height: 1.1;
+  margin: 0;
+  padding:0;
+}
+
+.figurePicture{
+  display: flex;
+  justify-content: space-around;
+  margin-top: 250px;
   
+}
+
+.coco img{
+  width: auto;
+  height: 300px
+}
+
+.watermelon img{
+  width: auto;
+  height: 300px;
+}
+
+.superGirl img{
+  width: auto;
+  height: 300px;
+}
+
+.octopusGone img{
+  width: auto;
+  height: 300px;
 }
