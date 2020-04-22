@@ -1,11 +1,19 @@
 .container{
     margin-top: 10%;
-    display: none;
     animation: 1s ease-out 0s 1 slideInFromLeft;
+    display: none;
 }
 
 .bd-left{
     border-left: 3px #343A40 solid;
+}
+
+canvas{ 
+  display: none;
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:-1;
 }
 
 #arrow{
@@ -25,6 +33,7 @@ top: 158px;
     z-index: 1000;
     color:white;
     display: block;
+    background: white;
     
 }
 

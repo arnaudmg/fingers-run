@@ -2,8 +2,9 @@ window.addEventListener('load',init)
 window.setTimeout("preloading()", 1900);
 
 function preloading(){
-    document.getElementById("preloader").style.display= "none";
-    document.querySelector(".container").style.display= "block"
+    document.querySelector("canvas").style.display = "block";
+    document.querySelector(".container").style.display = "block";
+    document.querySelector("#preloader").style.display = "none";
 }
 
 // Globals variables
