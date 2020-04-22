@@ -1,75 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Finger's Run</title>
   <link rel="icon" type="image/png" href="./images/logo.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Roboto:wght@300;500&display=swap"
+    rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="styles/home.css">
 </head>
+
 <body>
   <div class="toggling">
     <label class="switch" for="checkbox" title="Change color scheme to dark mode">
-      <input type="checkbox" id="checkbox" onclick="MyFunction()"/>
+      <input type="checkbox" id="checkbox" onclick="MyFunction()" />
       <div class="slider round"></div>
       <div class="toggle-moon">🌙</div>
       <div class="toggle-sun">☀️</div>
     </label>
   </div>
   <!---homepage home-->
-   <div class="home">
+  <div class="home" id="scene">
+    <img data-depth="0.4" src="./images/cloudNight.png" alt="clouds" id="clouds">
+  </div>
+  <div class="hero">
+    <!--Title-->
+    <h1 class="title">Finger's run</h1>
 
-  <!--Title-->
-     <h1 class="title">Finger's run</h1>
+    <!--button Play-->
+    <div class="buttonPlay">
+      <a href="#" class="play">Play</a>
+    </div>
+  </div>
+    <a href="#firstSection">
+      <div class="icon-scroll"></div>
+    </a>
 
-  <!--button Play-->
-     <div class="buttonPlay">
-       <a href="#" class="play">Play</a>
-     </div>
-    <a href="#firstSection"><div class="icon-scroll"></div></a>
 
-   </div>
- 
-<!--Section 1; concept du jeu-->
 
-   <section class="section1">
+  <!--Section 1; concept du jeu-->
+
+  <section class="section1">
     <div class="content-section1" id="firstSection">
-      
-        <h3 data-aos="fade-right">Le concept :</h3>
-        <p data-aos="fade-up"> Vous amusez est la priorité. Être capable de taper des mots aléatoires le plus vite
-            possible et ne pas se tromper est le but ! Mais derrière ce jeu divertissant, il y a un objectif plus
-            profond. Pour les personnes dyslexiques l’ordinateur est une aide précieuse pour écrire. Cependant ils
-            doivent apprendre à taper le plus vite possible. Et pour ça, nous proposons d’associer la dactylographie
-            au jeu, pour un apprentissage amusant ! </p>
-      </div>
-</section>
-<img src="./images/watermelonReverse.png" alt="WaterMelon game character" class="rightSideImage">
-<!-- Fin de Section 1-->
-<div data-aos="fade-left" class="separator"><hr></div>
 
-<!--Section 2; règles du jeu-->
-<img src="./images/coco.png" alt="Coco game character" class="leftSideImage">
+      <h3 data-aos="fade-right">Le concept :</h3>
+      <p data-aos="fade-up"> Vous amusez est la priorité. Être capable de taper des mots aléatoires le plus vite
+        possible et ne pas se tromper est le but ! Mais derrière ce jeu divertissant, il y a un objectif plus
+        profond. Pour les personnes dyslexiques l’ordinateur est une aide précieuse pour écrire. Cependant ils
+        doivent apprendre à taper le plus vite possible. Et pour ça, nous proposons d’associer la dactylographie
+        au jeu, pour un apprentissage amusant ! </p>
+    </div>
+  </section>
+  <img src="./images/watermelonReverse.png" alt="WaterMelon game character" class="rightSideImage">
+  <!-- Fin de Section 1-->
+  <div data-aos="fade-left" class="separator">
+    <hr>
+  </div>
 
-<section class="section2">
+  <!--Section 2; règles du jeu-->
+  <img src="./images/coco.png" alt="Coco game character" class="leftSideImage">
+
+  <section class="section2">
     <section class="content-section2">
-        <h3 data-aos="fade-right">Les règles :</h3>
-        <p data-aos="fade-up">Le but est de recopier le plus vite possible les mots affichés pour avancer. Mais
-            attention il y a des pièges : il faudra sauter en appuyant sur space, se pencher en appuyant sur shift
-            et surtout gare aux fautes ! 1 erreur et vous arrêterez d’avancer, une deuxième erreur sur un même mot
-            et vous serez éliminés.Plus vous réussirez à taper de mots justes, plus vous monterez dans les niveaux.
-        </p>
+      <h3 data-aos="fade-right">Les règles :</h3>
+      <p data-aos="fade-up">Le but est de recopier le plus vite possible les mots affichés pour avancer. Mais
+        attention il y a des pièges : il faudra sauter en appuyant sur space, se pencher en appuyant sur shift
+        et surtout gare aux fautes ! 1 erreur et vous arrêterez d’avancer, une deuxième erreur sur un même mot
+        et vous serez éliminés.Plus vous réussirez à taper de mots justes, plus vous monterez dans les niveaux.
+      </p>
     </section>
-</section>
+  </section>
 
-<!-- Fin de Section 2-->
-
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-        AOS.init();
-</script>
+  <!-- Fin de Section 2-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
   <script src="scripts/home.js">
   </script>
 </body>
+
 </html>
