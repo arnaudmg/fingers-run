@@ -2,13 +2,13 @@ let pasteque
 let pastequeImg
 let fire = []
 function preload(){
-    uImg = loadImage('../images/watermelon-2.png');
-    bgImg = loadImage('../images/map-nuit.jpg')
-    fImg = loadImage('../images/fire.png')
-    jImg = loadImage('../images/jumpWatermelon.png')
-    leftImg = loadImage('../images/runLeftWatermelon.png')
-    rightImg = loadImage('../images/runRightWatermelon.png')
-    hImg = loadImage('../images/dodgePasteque.png')
+    uImg = loadImage('./images/watermelon-2.png');
+    bgImg = loadImage('./images/map-nuit.jpg')
+    fImg = loadImage('./images/fire.png')
+    jImg = loadImage('./images/jumpWatermelon.png')
+    leftImg = loadImage('./images/runLeftWatermelon.png')
+    rightImg = loadImage('./images/runRightWatermelon.png')
+    hImg = loadImage('./images/dodgePasteque.png')
 }
 function setup() {
   createCanvas(windowWidth, windowHeight);
