@@ -4,9 +4,11 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-x: hidden;
   }
   
 .home{
+  position: relative;
   display:flex;
   flex-direction: column;
   justify-content: center;
@@ -15,93 +17,119 @@ body {
   width: 100%;
   background: url("../images/homeDarkMode.svg") ;
   background-size: cover ;
-  background-repeat: no-repeat;
-
-  
+  background-repeat: no-repeat; 
+  background-attachment: fixed;
+}
+.hero{
+  position: absolute;
+  top:0 ;
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  width: 100%;
 }
 
+#clouds{
+  position: absolute;
+  top: 0%;
+  left: 200px;
+}
 .title{
   font-family: 'Julius Sans One', sans-serif;
   font-size: 100px;
+  transform: translateY(125px);
 }
 
-.buttonPlay .play{
+.play{
   display: inline-block;
   width: 140px ;
   height: 50px;
-  line-height: 40px;
-  border-radius: 10px;
-  background: #FF724C;
+  line-height: 50px;
+  border-radius: 6px;
+  background: #FF9469;
   text-align: center;
   font-size: 25px;
+  font-family: 'Roboto';
+  font-weight: 300;
+  text-transform: uppercase;
   text-decoration: none;
   color: #000000;
 }
 
 
-  .dark-mode {
-    background-color: black;
-    color: white;
-  }
-  
-  .theme-switch input {
-    display:none;
-  }
-  
-  .slider {
-    background-color: rgb(156, 229, 252);
-    bottom: 0;
-    cursor: pointer;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    transition: .4s;
-    width: 60px;
-    height: 32px;
-  
-  }
-  
-  .slider:before {
-    background-color: #fff;
-    bottom: 4px;
-    content: "";
-    height: 26px;
-    left: 4px;
-    position: absolute;
-    transition: .4s;
-    width: 26px;
-  }
-  
-  .theme-switch-wrapper{
-    display: flex;
-    margin-top: 20px;
-  }
-  
-  input:checked + .slider {
-    background-color: #e79653;
-  }
-  
-  input:checked + .slider:before {
-    transform: translateX(26px);
-  }
-  
-  .slider.round {
-    border-radius: 34px;
-  }
-  
-  .slider.round:before {
-    border-radius: 50%;
-  }
-  
-  .luneimg {
-    width: 30px;
-    position: absolute;
-    top: 0;
-    left: 70px;
-  }
+.switch {
+  display: flex;
+  height: 36px;
+  position: relative;
+  width: 75px;
+}
 
-  .icon-scroll,
+.switch input {
+  display:none;
+}
+
+.slider {
+  background-color: #FFF;
+  border:1px solid #000;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: #333;
+  border:1px solid #000;
+  bottom: 3px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: .4s;
+  width: 26px;
+  z-index:421;
+}
+
+input:checked + .slider {
+  background-color: #101211;
+}
+
+input:checked + .slider:before {
+  transform: translateX(34px);
+  border-color:#CFCFCF;
+  background-color:#EFEFEF;
+}
+
+.slider.round {
+  border-radius: 35px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.toggle-moon, .toggle-sun {
+  width:50%;
+  position:relative;
+  z-index:420;
+}
+
+.toggle-moon{
+  padding-left: 2.5px;
+}
+
+.toggling{
+  position: absolute;
+  right: 2%;
+  top: 2%;
+  z-index: 5000;
+}
+.icon-scroll,
 .icon-scroll:before {
     position: absolute;
     left: 50%
@@ -113,8 +141,9 @@ body {
     bottom: 10px;
     margin-top: -35px;
     border: 2px solid #fff;
-    border-radius: 25px
-}
+    border-radius: 25px;
+    z-index: 5000;
+  }
 @media (max-width: 767px) {
     .icon-scroll {
         position: relative
@@ -142,6 +171,10 @@ body {
     }
 }
 
+.dark-mode {
+  background-color: black;
+  color: white;
+}
 /*Section 1; concept du jeu*/
 
 .section1 {
@@ -159,7 +192,26 @@ body {
 }
 
 /*Fin de Section 1*/
-
+.separator{
+  width: 400px;
+  margin: 0 auto;
+}
+hr{
+  border-top: 1px solid black;
+}
+.leftSideImage{
+  width: 280px;
+  position: absolute;
+  left: -5%;
+  transform: rotate(35deg);
+}
+.rightSideImage{
+  width: 350px;
+  position: absolute;
+  top:110%;
+  right: -5%;
+  transform: rotate(-35deg);
+}
 /*Section 2; concept du jeu*/
 
 .section2 {
@@ -188,7 +240,7 @@ h3 {
 } 
 
 p{
-  font-family: 'Julius Sans One', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: lighter;
 
 }
@@ -241,4 +293,44 @@ h2{
 .octopusGone img{
   width: auto;
   height: 300px;
+  background-repeat: no-repeat;
+}
+
+footer{
+  left: 0;
+  background-color: #fad6d6;
+  position: relative;;
+  bottom:0;
+  width:100%;
+  height:100px;
+  display: flex;
+  
+}
+
+
+.titlefooter {
+  font-family: 'Julius Sans One', sans-serif;
+  margin: 0 auto;
+  width: 390px;
+  padding-top: 20px;
+  font-size: 50px;
+  margin-left: 470px;
+}
+
+.copyright {
+  margin-top: 60px;
+  margin-right: 100px;
+  font-size: 16px;
+}
+
+@media screen and (max-width: 1440px){
+  .title{
+    transform: translateY(0);
+  }
+}
+
+@media screen and (min-width: 1900px){
+  .play{
+    margin-top: 110px;
+  }
 }
