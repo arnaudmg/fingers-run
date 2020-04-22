@@ -4,6 +4,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    overflow-x: hidden;
   }
   
 .home{
@@ -23,15 +24,18 @@ body {
   font-size: 100px;
 }
 
-.buttonPlay .play{
+.play{
   display: inline-block;
   width: 140px ;
   height: 50px;
-  line-height: 40px;
-  border-radius: 10px;
-  background: #FF724C;
+  line-height: 50px;
+  border-radius: 6px;
+  background: #FF9469;
   text-align: center;
   font-size: 25px;
+  font-family: 'Roboto';
+  font-weight: 300;
+  text-transform: uppercase;
   text-decoration: none;
   color: #000000;
 }
@@ -168,7 +172,26 @@ input:checked + .slider:before {
 }
 
 /*Fin de Section 1*/
-
+.separator{
+  width: 400px;
+  margin: 0 auto;
+}
+hr{
+  border-top: 1px solid black;
+}
+.leftSideImage{
+  width: 300px;
+  position: absolute;
+  left: -5%;
+  transform: rotate(35deg);
+}
+.rightSideImage{
+  width: 350px;
+  position: absolute;
+  top:110%;
+  right: -5%;
+  transform: rotate(-35deg);
+}
 /*Section 2; concept du jeu*/
 
 .section2 {
