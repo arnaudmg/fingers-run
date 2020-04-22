@@ -20,6 +20,13 @@ body {
   background-repeat: no-repeat; 
   background-attachment: fixed;
 }
+
+.active{
+  background: url("../images/homePageDay.svg") ;
+  background-size: cover ;
+  background-repeat: no-repeat; 
+  background-attachment: fixed;
+}
 .hero{
   position: absolute;
   top:0 ;
@@ -172,7 +179,7 @@ input:checked + .slider:before {
 }
 
 .dark-mode {
-  background-color: black;
+  background-color: #121212;
   color: white;
 }
 /*Section 1; concept du jeu*/
