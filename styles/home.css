@@ -20,6 +20,7 @@ body {
   background-repeat: no-repeat; 
   background-attachment: fixed;
 }
+
 .hero{
   position: absolute;
   top:0 ;
@@ -39,6 +40,7 @@ body {
 .title{
   font-family: 'Julius Sans One', sans-serif;
   font-size: 100px;
+  transform: translateY(125px);
 }
 
 .play{
@@ -255,4 +257,10 @@ p{
   background: url("../images/figureDarkMode.svg") ;
   background-size: cover ;
   background-repeat: no-repeat;
+}
+
+@media screen and (min-width: 1900px){
+  .play{
+    margin-top: 110px;
+  }
 }
