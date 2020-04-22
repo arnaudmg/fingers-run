@@ -322,12 +322,14 @@ footer{
   padding-top: 20px;
   font-size: 50px;
   margin-left: 470px;
+  color: black;
 }
 
 .copyright {
   margin-top: 60px;
   margin-right: 100px;
   font-size: 16px;
+  color: black;
 }
 
 @media screen and (max-width: 1440px){
