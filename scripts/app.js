@@ -357,3 +357,9 @@ function checkStatus(){
         score = -1 //to be more fair, when u loose, the next first word u type'll not give u a point, thanks to that.
     }
 }
+
+function RestrictSpace() {
+    if (event.keyCode == 32) {
+        return false;
+    }
+}

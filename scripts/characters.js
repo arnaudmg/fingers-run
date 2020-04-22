@@ -6,16 +6,16 @@ class Pasteque{
       this.y = height - this.r;
       this.vy = 0;
       this.texture = img
-      this.gravity = 0.3;
+      this.gravity = 1;
     }
     
     jump(){
         if(this.y == height - this.r)
-        this.vy = -35;
+        this.vy = -105;
     }
     
     hits(fire){
-      return collideRectRect(this.x,this.y,this.r,this.r,fire.x,fire.y,fire.r,fire.r);
+      return collideRectRect(this.x -100,this.y,this.r,this.r,fire.x,fire.y,fire.r,fire.r);
     }
     move(){
       this.y += this.vy

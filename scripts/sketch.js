@@ -29,7 +29,7 @@ function keyPressed(){
 }
 
 function draw() {
-    if(random(1) < 0.0019){
+    if(random(1) < 0.0012){
         fire.push(new Fire())
     }
 
