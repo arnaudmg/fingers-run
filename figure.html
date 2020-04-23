@@ -44,6 +44,19 @@
         </div>      
 
     </div>
-
+<script>
+    let cocoselected = document.querySelector('.coco')
+    cocoselected.addEventListener('click', (event) =>{
+        localStorage.setItem("character", "coco")
+    })
+    let sgselected = document.querySelector('.superGirl')
+    sgselected.addEventListener('click', (event) =>{
+        localStorage.setItem("character", "supergirl")
+    })
+    let wmselected = document.querySelector('.watermelon')
+    wmselected.addEventListener('click', (event) =>{
+        localStorage.setItem("character", "watermelon")
+    })
+</script>
 </body>
 </html>

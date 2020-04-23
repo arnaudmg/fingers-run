@@ -1,14 +1,15 @@
 let pasteque
 let pastequeImg
 let fire = []
+let characterType = localStorage.getItem("character") ? localStorage.getItem("character") : "coco" 
 function preload(){
-    uImg = loadImage('./images/watermelon-2.png');
-    bgImg = loadImage('./images/map-nuit.jpg')
-    fImg = loadImage('./images/fire.png')
-    jImg = loadImage('./images/jumpWatermelon.png')
-    leftImg = loadImage('./images/runLeftWatermelon.png')
-    rightImg = loadImage('./images/runRightWatermelon.png')
-    hImg = loadImage('./images/dodgePasteque.png')
+    uImg = loadImage(`./images/${characterType}/middle.png`); // watermelon-2
+    bgImg = loadImage(`./images/map-nuit.jpg`)
+    fImg = loadImage(`./images/fire.png`)
+    jImg = loadImage(`./images/${characterType}/jump.png`) // jumpWatermelon
+    leftImg = loadImage(`./images/${characterType}/left.png`)
+    rightImg = loadImage(`./images/${characterType}/right.png`)
+    hImg = loadImage(`./images/${characterType}/dodge.png`)
 }
 function setup() {
   createCanvas(windowWidth, windowHeight);
