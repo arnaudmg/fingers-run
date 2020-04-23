@@ -402,6 +402,19 @@ footer{
   margin-top: 20px;
 }
 
+/*Input*/
+
+#username{
+  display: inline-block;
+  height: 60px;
+  font-size: 2em;
+	color: #888;
+	padding: 0.25em;
+  margin-top: 0.25em;
+  position: absolute;
+  top: 30%;
+}
+
 /* Slider end */ 
 
 @media screen and (min-width: 1222px) and (max-width: 1612px){
