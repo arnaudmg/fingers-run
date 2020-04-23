@@ -46,7 +46,6 @@ body {
 .title{
   font-family: 'Julius Sans One', sans-serif;
   font-size: 100px;
-  transform: translateY(125px);
 }
 
 .play{
