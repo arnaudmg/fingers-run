@@ -50,9 +50,11 @@ function draw() {
     if(random(1) < 0.001){
       bird.push(new Bird())
     }
+    let fIndex = 0
     for (let f of fire){
         f.move()
         f.show()
+        fIndex++
 
         if(character.hits(f)){
           isPlaying = false
@@ -60,18 +62,26 @@ function draw() {
           console.log('game');
           noLoop();
         }
+        // if(f.x < 0){
+        //   score++;
+        //   fire.splice(fIndex,1)
+        // }
     }
-
+    let bIndex = 0
     for (let b of bird){
       b.move()
       b.show()
-
+      bIndex++
       if(character.hits(b)){
         isPlaying = false
         time = 0
         console.log('game');
         noLoop();
       }
+      // if(b.x < 0){
+      //   score++;
+      //   bird.splice(bIndex,1)
+      // }   
   }
     character.show();
     character.move();

@@ -284,9 +284,11 @@ const wordList = [
 startBtn.addEventListener('click', init)
 //Initilize game
 function init(){
-    if(hasStarted) return
-
+    time = currentLevel
     hasStarted = true
+    bird=[]
+    fire=[]
+    loop()
     //Loading words from the array
     showWord(wordList)
     showFutureWord(wordList)
@@ -317,12 +319,11 @@ function startMatch(){
     else{
         scoreDisplay.innerHTML = score
     }
-
 }
 
 //Match the current word to the word in the input
 function matchWords(){
-    if(wordInput.value === currentWord.innerHTML){
+    if(wordInput.value.toLowerCase() === currentWord.innerHTML){
         message.innerHTML = 'Correct !'
         return true
     }
