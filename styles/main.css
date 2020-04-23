@@ -68,4 +68,19 @@ svg{
   }
 }
 
-  
+.play{
+  display: inline-block;
+  width: 140px ;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 6px;
+  background: #FF9469;
+  text-align: center;
+  font-size: 16px;
+  font-family: 'Roboto';
+  font-weight: 200;
+  text-decoration: none;
+  color: #000000;
+  margin-top: 10px;
+  margin-right: 5px;
+}

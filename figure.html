@@ -9,7 +9,14 @@
   <link rel="stylesheet" href="styles/home.css">
 </head>
 <body>
-
+    <div class="toggling">
+        <label class="switch" for="checkbox" title="Change color scheme to dark mode">
+          <input type="checkbox" class="js-toggler" id="checkbox" />
+          <div class="slider round"></div>
+          <div class="toggle-moon">🌙</div>
+          <div class="toggle-sun">☀️</div>
+        </label>
+      </div>
     <!---picture Background-->
     <div class="pictureBackground">
         <h2>Choisis ton personnage!</h3>
@@ -58,5 +65,6 @@
         localStorage.setItem("character", "watermelon")
     })
 </script>
+<script src="scripts/pre-game.js"></script>
 </body>
 </html>

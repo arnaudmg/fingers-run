@@ -18,7 +18,7 @@ class Character{
     
     jump(){
         if(this.y == height - this.imageHeight/2)
-        this.vy = -105;
+        this.vy = -85;
     }
     
     hits(fire){

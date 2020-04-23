@@ -36,7 +36,7 @@ function keyReleased(){
 }
 
 function draw() {
-    if(random(1) < 0.00012){
+    if(random(1) < 0.002){
         fire.push(new Fire())
     }
 

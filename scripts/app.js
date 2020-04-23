@@ -25,7 +25,7 @@ let score = 0
 let isPlaying
 
 // DOM elements
-
+const startBtn = document.querySelector('.start-game');
 const wordInput = document.querySelector('#word-input');
 const currentWord = document.querySelector('#current-word');
 const futureWord = document.querySelector('#future-word');
@@ -281,6 +281,7 @@ const wordList = [
     'your', 'yourself', 'youth', 'zero', 'zebra', 'zipper', 'zoo', 'zulu'
 ];
 
+startBtn.addEventListener('click', init)
 //Initilize game
 function init(){
     //Loading words from the array
@@ -347,6 +348,7 @@ function countdown(){
     }
     else if(time === 0){
         isPlaying = false
+        noLoop()
         //Game is over ! 
     }
     timeDisplay.innerHTML = time
