@@ -23,11 +23,11 @@ function windowResized() {
 function keyPressed(){
   if(key == ' '){
     character.jump();
-    character.texture = jImg
+    character.setImage(jImg)
   }
   if (keyCode === CONTROL) {
     specialCheat = true
-    character.texture = hImg
+    character.setImage(hImg)
   }
 }
 
@@ -36,7 +36,7 @@ function keyReleased(){
 }
 
 function draw() {
-    if(random(1) < 0.12){
+    if(random(1) < 0.00012){
         fire.push(new Fire())
     }
 
@@ -55,19 +55,19 @@ function draw() {
     character.show();
     character.move();
     
-    const invertedYpos = character.y - height + character.r // = 0 quand on touche le sol
+    const invertedYpos = character.y - height + character.imageHeight/2 // = 0 quand on touche le sol
     if(invertedYpos == 0 && character.texture == jImg){
       console.log("change")
-      character.texture = uImg
+      character.setImage(uImg)
     }
     if(character.texture != jImg && !specialCheat){
       if(frameCount % 80 == 20){
-        character.texture = leftImg
+        character.setImage(leftImg)
       }else if((frameCount % 40) == 0){
-        character.texture = uImg
+        character.setImage(uImg)
       }
       else if((frameCount % 60) == 0){
-        character.texture = rightImg
+        character.setImage(rightImg)
       }
     }
 }
