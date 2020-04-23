@@ -403,3 +403,9 @@ footer{
 }
 
 /* Slider end */ 
+
+@media screen and (min-width: 1222px) and (max-width: 1612px){
+  .title{
+    transform: translateY(-30px);
+  }
+}

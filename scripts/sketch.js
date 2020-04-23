@@ -44,7 +44,7 @@ function draw() {
 
     if(!hasStarted) return // if game hasn't started, we don't play game logic
 
-    if(random(1) < 0.005){
+    if(random(1) < 0.003){
       fire.push(new Fire())
     }
     if(random(1) < 0.001){

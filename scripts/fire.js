@@ -5,7 +5,7 @@ class Fire{
         this.y = height - this.r
     }
     move(){
-        this.x -= 8
+        this.x -= 7
     }
     show(){
         image(fImg, this.x, this.y, this.r, this.r)

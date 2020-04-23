@@ -5,7 +5,7 @@ class Bird{
         this.y = height/1.3 - this.r;
     }
     move(){
-        this.x -= 5
+        this.x -= 3
     }
     show(){
         image(bImg, this.x, this.y, this.r, this.r)
