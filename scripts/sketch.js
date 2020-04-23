@@ -2,16 +2,18 @@ let hasStarted = false
 let character
 let characterImg
 let fire = []
+let bird = []
 let characterType = localStorage.getItem("character") ? localStorage.getItem("character") : "coco" 
 let specialCheat = false
 function preload(){
     uImg = loadImage(`./images/${characterType}/middle.png`);
     bgImg = loadImage(`./images/map-nuit.jpg`)
-    fImg = loadImage(`./images/fire.png`)
+    fImg = loadImage(`./images/rocher.png`)
     jImg = loadImage(`./images/${characterType}/jump.png`)
     leftImg = loadImage(`./images/${characterType}/left.png`)
     rightImg = loadImage(`./images/${characterType}/right.png`)
     hImg = loadImage(`./images/${characterType}/dodge.png`)
+    bImg = loadImage(`./images/bird.png`)
 }
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -42,10 +44,12 @@ function draw() {
 
     if(!hasStarted) return // if game hasn't started, we don't play game logic
 
-    if(random(1) < 0.002){
-        fire.push(new Fire())
+    if(random(1) < 0.005){
+      fire.push(new Fire())
     }
-
+    if(random(1) < 0.001){
+      bird.push(new Bird())
+    }
     for (let f of fire){
         f.move()
         f.show()
@@ -57,6 +61,18 @@ function draw() {
           noLoop();
         }
     }
+
+    for (let b of bird){
+      b.move()
+      b.show()
+
+      if(character.hits(b)){
+        isPlaying = false
+        time = 0
+        console.log('game');
+        noLoop();
+      }
+  }
     character.show();
     character.move();
     
