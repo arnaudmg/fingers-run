@@ -359,7 +359,6 @@ footer{
   padding: 0px;
   width: 100%;
   height: 80vh;
-  background-color: #32323e;
   display : flex;
   justify-content: center;
   align-items: center;
@@ -404,4 +403,3 @@ footer{
 }
 
 /* Slider end */ 
-

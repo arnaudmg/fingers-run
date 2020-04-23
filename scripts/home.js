@@ -23,3 +23,13 @@ if(localStorage.getItem("highscore") == null){
       "jc": 999,
     }))
   }
+
+  $(document).ready(function() {
+    $('#autoWidth').lightSlider({
+        autoWidth:true,
+        loop:true,
+        onSliderLoad: function() {
+            $('#autoWidth').removeClass('cS-hidden');
+        } 
+    });  
+  });
