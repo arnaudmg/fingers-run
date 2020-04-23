@@ -21,7 +21,7 @@ body {
   background-attachment: fixed;
 }
 
-.active{
+.pictureBackground.active, .active{
   background: url("../images/homePageDay.svg") ;
   background-size: cover ;
   background-repeat: no-repeat; 

@@ -1,5 +1,5 @@
-window.addEventListener('load',init)
-window.setTimeout("preloading()", 1900);
+// window.addEventListener('load',init)
+window.setTimeout(preloading, 1900);
 
 function preloading(){
     document.querySelector("canvas").style.display = "block";
@@ -284,6 +284,9 @@ const wordList = [
 startBtn.addEventListener('click', init)
 //Initilize game
 function init(){
+    if(hasStarted) return
+
+    hasStarted = true
     //Loading words from the array
     showWord(wordList)
     showFutureWord(wordList)

@@ -1,3 +1,4 @@
+let hasStarted = false
 let character
 let characterImg
 let fire = []
@@ -21,6 +22,7 @@ function windowResized() {
 }
 
 function keyPressed(){
+  if(!hasStarted) return
   if(key == ' '){
     character.jump();
     character.setImage(jImg)
@@ -36,11 +38,14 @@ function keyReleased(){
 }
 
 function draw() {
+    background(bgImg)
+
+    if(!hasStarted) return // if game hasn't started, we don't play game logic
+
     if(random(1) < 0.002){
         fire.push(new Fire())
     }
 
-    background(bgImg);
     for (let f of fire){
         f.move()
         f.show()
