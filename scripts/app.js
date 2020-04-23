@@ -11,7 +11,7 @@ function preloading(){
 
 //Available levels
 const levels = {
-    easy: 5,
+    easy: 20,
     medium: 3,
     hard: 1
 }
@@ -288,6 +288,7 @@ function init(){
     showFutureWord(wordList)
     //Start matching with input
     wordInput.addEventListener('input', startMatch)
+    
     //Countdown every seconds
     setInterval(countdown, 1000)
     //Is game over ?

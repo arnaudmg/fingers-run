@@ -1,8 +1,8 @@
-class Pasteque{
+class Character{
     constructor(img){
       this.r = 260;
       this.x = 50;
-      this.ratio = 1/10
+      this.scale = 1/2
       this.y = height - this.r;
       this.vy = 0;
       this.texture = img
@@ -15,7 +15,7 @@ class Pasteque{
     }
     
     hits(fire){
-      return collideRectRect(this.x -100,this.y,this.r,this.r,fire.x,fire.y,fire.r,fire.r);
+      return collideRectRect(this.x,this.y,this.r,this.r,fire.x,fire.y,fire.r,fire.r);
     }
     move(){
       this.y += this.vy
@@ -24,8 +24,8 @@ class Pasteque{
     }
     
     show(){ 
-      image(this.texture,this.x, this.y, this.texture.height * this.ratio, this.texture.height * this.ratio);
+      image(this.texture,this.x, this.y, this.texture.width * this.scale, this.texture.height * this.scale);
       fill(255,50)
-      rect(this.x,this.y,this.r, this.r)
+      rect(this.x, this.y, this.r, this.r)
     }  
 }
