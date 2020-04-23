@@ -4,6 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>JavaScript</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+  integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link rel="stylesheet" href="styles/home.css">
@@ -47,21 +49,43 @@
                     <img src="images/octopusGone.png" alt="octopus">
             </div>
         
-                       
+            <input type="text" name="username" id="username" placeholder="Votre nom">   
         </div>      
 
     </div>
 <script>
-    let cocoselected = document.querySelector('.coco')
+    const usernameInput = document.querySelector("input#username")
+
+    usernameInput.value = localStorage.getItem("username") ? localStorage.getItem("username") : ""
+
+    let cocoselected = document.querySelector('.coco a')
     cocoselected.addEventListener('click', (event) =>{
+        if(usernameInput.value.length === 0){
+            event.preventDefault()
+            alert("Veuillez entrer un nom avant de continuer")
+            return
+        }
+        localStorage.setItem("username", usernameInput.value)
         localStorage.setItem("character", "coco")
     })
     let sgselected = document.querySelector('.superGirl')
     sgselected.addEventListener('click', (event) =>{
+        if(usernameInput.value.length === 0){
+            event.preventDefault()
+            alert("Veuillez entrer un nom avant de continuer")
+            return
+        }
+        localStorage.setItem("username", usernameInput.value)
         localStorage.setItem("character", "supergirl")
     })
     let wmselected = document.querySelector('.watermelon')
     wmselected.addEventListener('click', (event) =>{
+        if(usernameInput.value.length === 0){
+            event.preventDefault()
+            alert("Veuillez entrer un nom avant de continuer")
+            return
+        }
+        localStorage.setItem("username", usernameInput.value)
         localStorage.setItem("character", "watermelon")
     })
 </script>

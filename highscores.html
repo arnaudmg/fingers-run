@@ -12,13 +12,23 @@
       <div class="content">
         <h1 id="finalScore">High Scores</h1>
         <ul id="highScoresList">
-            <li class="high-score">rgger</li>
-            <li class="high-score">rgger</li>
-            <li class="high-score">rgger</li>
-            <li class="high-score">rgger</li>
+            <li class="high-score js-placeholder">rgger</li>
         </ul>
         <a class="btn" href="./game.html">Try Again !</a>
       </div>
     </div>
+    <script>
+        const leaderBoard = JSON.parse(localStorage.getItem("highscore"))
+        const leaderboardElement = document.querySelector("#highScoresList")
+        const entryPlaceholder = document.querySelector(".high-score.js-placeholder")
+        const entryModel = entryPlaceholder.cloneNode()
+        entryModel.classList.remove("js-placeholder")
+        entryPlaceholder.remove()
+        for(let [username, score] of Object.entries(leaderBoard)){
+            const entry = entryModel.cloneNode()
+            entry.innerHTML = `${username} - ${score}`
+            leaderboardElement.appendChild(entry)
+        }
+    </script>
   </body>
 </html>

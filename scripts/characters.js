@@ -32,7 +32,5 @@ class Character{
     
     show(){ 
       image(this.texture,this.x, this.y, this.texture.width * this.scale, this.texture.height * this.scale);
-      fill(255,50)
-      rect(this.x, this.y, this.imageWidth * this.scale, this.imageHeight * this.scale)
     }  
 }

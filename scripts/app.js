@@ -281,6 +281,8 @@ const wordList = [
     'your', 'yourself', 'youth', 'zero', 'zebra', 'zipper', 'zoo', 'zulu'
 ];
 
+let countdownIntervalId, checkStatusIntervalId
+
 startBtn.addEventListener('click', init)
 //Initilize game
 function init(){
@@ -296,9 +298,9 @@ function init(){
     wordInput.addEventListener('input', startMatch)
     
     //Countdown every seconds
-    setInterval(countdown, 1000)
+    countdownIntervalId = setInterval(countdown, 1000)
     //Is game over ?
-    setInterval(checkStatus, 100)
+    checkStatusIntervalId = setInterval(checkStatus, 100)
 }
 
 function startMatch(){
@@ -361,6 +363,20 @@ function countdown(){
 function checkStatus(){
     if(!isPlaying && time === 0){
         message.innerHTML = 'The game is over, try again !'
+ 
+        clearInterval(countdownIntervalId)
+        clearInterval(checkStatusIntervalId)
+
+        const leaderBoard = JSON.parse(localStorage.getItem("highscore"))
+        const username = localStorage.getItem("username")
+        if(leaderBoard[username]){
+            if(leaderBoard[username] < score){
+                leaderBoard[username] = score
+            }
+        }else{
+            leaderBoard[username] = score
+        }
+        localStorage.setItem("highscore", JSON.stringify(leaderBoard))
         score = -1 //to be more fair, when u loose, the next first word u type'll not give u a point, thanks to that.
     }
 }
