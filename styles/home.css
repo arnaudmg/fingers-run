@@ -406,6 +406,9 @@ footer{
 
 @media screen and (min-width: 1222px) and (max-width: 1612px){
   .title{
-    transform: translateY(-30px);
+    transform: translateY(20px);
+  }
+  .play{
+    transform: translateY(23px);
   }
 }
