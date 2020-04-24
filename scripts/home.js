@@ -1,8 +1,4 @@
-function myFunction() {
-    var element = document.body;
-    element.classList.toggle("dark-mode");
-}
-
+//ParallaxJS for clouds
 var scene = document.getElementById('scene');
 var parallaxInstance = new Parallax(scene);
 
@@ -10,6 +6,7 @@ document.querySelector(".js-toggler").addEventListener("change", (_event) => {
     document.body.classList.toggle("dark-mode")
     document.querySelector('.home').classList.toggle("active") 
 })
+
 
 if(localStorage.getItem("highscore") == null){
   // fake highscore for demo

@@ -8,6 +8,11 @@ let bird = []
 let characterType = localStorage.getItem("character") ? localStorage.getItem("character") : "coco" 
 let specialCheat = false
 
+
+// PRELOADING IMAGES, USING PATH, ALLOWING US TO CREATE NEW CHARACTERS AGAIN AND AGAIN.
+// FEEL FREE TO CREATE, ONES, AND THEN SEND US A PR ! (take care about images files's name)
+
+
 function preload(){
   uImg = loadImage(`./images/${characterType}/middle.png`);
   bgImg = loadImage(`./images/map-nuit.jpg`)
@@ -19,15 +24,20 @@ function preload(){
   bImg = loadImage(`./images/bird.png`)
 }
 
+
+// SETUP
+
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
   character = new Character(uImg);
 }
+
 // Adapt full screen width
 function windowResized() {
 	resizeCanvas(windowWidth, windowHeight);
 }
-
+//Put jump and dodge images when keypress
 function keyPressed(){
   if(!hasStarted) return
   if(key == ' '){
@@ -44,10 +54,14 @@ function keyReleased(){
   specialCheat = false
 }
 
+
+// DRAW
+
+
 function draw() {
     background(bgImg)
 
-    if(!hasStarted) return // if game hasn't started, we don't play game logic
+    if(!hasStarted) return // if game hasn't started, we don't play game. Logic.
 
     if(random(1) < 0.003){
       fire.push(new Fire())
@@ -69,7 +83,7 @@ function draw() {
         }
         // if(f.x < 0){
         //   score++;
-        //   fire.splice(fIndex,1)
+        //   fire.splice(fIndex,1) <-- I was trying things, implement score while object is out of the width.
         // }
     }
     let bIndex = 0
@@ -86,16 +100,21 @@ function draw() {
       // if(b.x < 0){
       //   score++;
       //   bird.splice(bIndex,1)
-      // }   
+      // }   <-- I was trying things, implement score while object is out of the width.
   }
     character.show();
     character.move();
     
-    const invertedYpos = character.y - height + character.imageHeight/2 // = 0 quand on touche le sol
+
+// ANIMATION AND RESET IMAGE AFTER CHARACTER JUMP
+
+
+    const invertedYpos = character.y - height + character.imageHeight/2 // = 0 when we are hitting floor
     if(invertedYpos == 0 && character.texture == jImg){
       console.log("change")
       character.setImage(uImg)
     }
+    //Making frames, image succession.
     if(character.texture != jImg && !specialCheat){
       if(frameCount % 80 == 20){
         character.setImage(leftImg)

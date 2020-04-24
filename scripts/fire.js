@@ -1,3 +1,5 @@
+//OOP for objects who spawn
+
 class Fire{
     constructor(){
         this.r = 100;

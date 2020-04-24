@@ -52,7 +52,13 @@ svg{
     fill: #fc2f70;
     stroke: none;
 }
+ 
+/*************** 
   
+  KEYFRAMES ANIMATION
+  
+***************/
+
 @keyframes spin{
     to {
       transform: rotate(360deg);
@@ -67,6 +73,12 @@ svg{
     transform: translateY(0);
   }
 }
+
+/*************** 
+  
+  BUTTON
+  
+***************/
 
 .play{
   display: inline-block;

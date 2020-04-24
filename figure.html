@@ -1,58 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JavaScript</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-  integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Roboto:wght@300;500&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles/home.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <meta name="description" content="Pre-game page">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&family=Roboto:wght@300;500&display=swap"
+        rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/home.css">
 </head>
 <body>
+    <!-- Toggle for dark mode -->
     <div class="toggling">
         <label class="switch" for="checkbox" title="Change color scheme to dark mode">
-          <input type="checkbox" class="js-toggler" id="checkbox" />
-          <div class="slider round"></div>
-          <div class="toggle-moon">🌙</div>
-          <div class="toggle-sun">☀️</div>
+            <input type="checkbox" class="js-toggler" id="checkbox" />
+            <div class="slider round"></div>
+            <div class="toggle-moon">🌙</div>
+            <div class="toggle-sun">☀️</div>
         </label>
-      </div>
+    </div>
     <!---picture Background-->
     <div class="pictureBackground">
         <h2>Choisis ton personnage!</h3>
-        
-        <!---figure Choice-->
-        <div class="figurePicture">
-            <div class="coco">
-                <a href="./game.html" class="figureChoice">
-                    <img src="images/coco.png" alt="coco">
-                </a>
-                
-            </div>
-        
-            <div class="superGirl">
+            <!---figure Choice-->
+            <div class="figurePicture">
+                <div class="coco">
+                    <a href="./game.html" class="figureChoice">
+                        <img src="images/coco.png" alt="coco">
+                    </a>
+                </div>
+                <div class="superGirl">
                     <a href="./game.html" class="figureChoice">
                         <img src="images/superGirl.png" alt="supergirl">
                     </a>
                 </div>
-
-             <div class="watermelon">
-                <a href="./game.html" class="figureChoice">
-                    <img src="images/watermelon.png" alt="coco">
-                </a>
-            </div>
-             
-         <!---unlockable Figure-->   
-            <div class="octopusGone">
+                <div class="watermelon">
+                    <a href="./game.html" class="figureChoice">
+                        <img src="images/watermelon.png" alt="coco">
+                    </a>
+                </div>
+                <!---unlockable Figure-->
+                <div class="octopusGone">
                     <img src="images/octopusGone.png" alt="octopus">
+                </div>
+                <input type="text" name="username" id="username" placeholder="Votre nom">
             </div>
-        
-            <input type="text" name="username" id="username" placeholder="Votre nom">   
-        </div>      
-
     </div>
-<script src="scripts/pre-game.js"></script>
+    <script src="scripts/pre-game.js"></script>
 </body>
 </html>

@@ -1,3 +1,4 @@
+//OOP for objects who spawn
 class Character{
     constructor(img){
       this.x = 50;
@@ -20,10 +21,11 @@ class Character{
         if(this.y == height - this.imageHeight/2)
         this.vy = -35;
     }
-    
+    // Collision using Collide2D
     hits(fire){
       return collideRectRect(this.x,this.y,this.imageWidth * this.scale ,this.imageHeight * this.scale,fire.x,fire.y,fire.r,fire.r);
     }
+
     move(){
       this.y += this.vy
       this.vy += this.gravity

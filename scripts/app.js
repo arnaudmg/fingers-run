@@ -17,7 +17,6 @@ const levels = {
 }
 
 // Change levels
-
 const currentLevel = levels.easy
 
 let time = currentLevel
@@ -25,6 +24,7 @@ let score = 0
 let isPlaying
 
 // DOM elements
+
 const startBtn = document.querySelector('.start-game');
 const wordInput = document.querySelector('#word-input');
 const currentWord = document.querySelector('#current-word');
@@ -33,7 +33,9 @@ const scoreDisplay = document.querySelector('#score');
 const timeDisplay = document.querySelector('#time');
 const message = document.querySelector('#message');
 const seconds = document.querySelector('#seconds');
+let countdownIntervalId, checkStatusIntervalId
 
+//Array with all words.
 const wordList = [
     'ability', 'able', 'aboard', 'about', 'above', 'accept', 'accident', 'according',
     'account', 'accurate', 'acres', 'across', 'act', 'action', 'active', 'activity',
@@ -281,10 +283,11 @@ const wordList = [
     'your', 'yourself', 'youth', 'zero', 'zebra', 'zipper', 'zoo', 'zulu'
 ];
 
-let countdownIntervalId, checkStatusIntervalId
+
 
 startBtn.addEventListener('click', init)
-//Initilize game
+
+//Initialize game
 function init(){
     time = currentLevel
     hasStarted = true
@@ -296,7 +299,6 @@ function init(){
     showFutureWord(wordList)
     //Start matching with input
     wordInput.addEventListener('input', startMatch)
-    
     //Countdown every seconds
     countdownIntervalId = setInterval(countdown, 1000)
     //Is game over ?
@@ -366,7 +368,7 @@ function checkStatus(){
  
         clearInterval(countdownIntervalId)
         clearInterval(checkStatusIntervalId)
-
+        //Making leaderboard in localStorage
         const leaderBoard = JSON.parse(localStorage.getItem("highscore"))
         const username = localStorage.getItem("username")
         if(leaderBoard[username]){
@@ -376,7 +378,8 @@ function checkStatus(){
         }else{
             leaderBoard[username] = score
         }
-        localStorage.setItem("highscore", JSON.stringify(leaderBoard))
+        localStorage.setItem("highscore", JSON.stringify(leaderBoard)) 
+        //JSON.stringify convert a into a string an array on the localStorage.
         score = -1 //to be more fair, when u loose, the next first word u type'll not give u a point, thanks to that.
     }
 }

@@ -1,10 +1,13 @@
+//Toggle button algorithm using toggle method
+
 document.querySelector(".js-toggler").addEventListener("change", (_event) => {
     document.body.classList.toggle("dark-mode")
     document.querySelector('.pictureBackground').classList.toggle("active") 
 })
 
-const usernameInput = document.querySelector("input#username")
+//localStorage for leaderboards and for character selection
 
+const usernameInput = document.querySelector("input#username")
 usernameInput.value = localStorage.getItem("username") ? localStorage.getItem("username") : ""
 
 let cocoselected = document.querySelector('.coco a')
