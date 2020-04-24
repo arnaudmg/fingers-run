@@ -6,14 +6,14 @@ let bird = []
 let characterType = localStorage.getItem("character") ? localStorage.getItem("character") : "coco" 
 let specialCheat = false
 function preload(){
-    uImg = loadImage(`./images/${characterType}/middle.png`);
-    bgImg = loadImage(`./images/map-nuit.jpg`)
-    fImg = loadImage(`./images/rocher.png`)
-    jImg = loadImage(`./images/${characterType}/jump.png`)
-    leftImg = loadImage(`./images/${characterType}/left.png`)
-    rightImg = loadImage(`./images/${characterType}/right.png`)
-    hImg = loadImage(`./images/${characterType}/dodge.png`)
-    bImg = loadImage(`./images/bird.png`)
+  uImg = loadImage(`./images/${characterType}/middle.png`);
+  bgImg = loadImage(`./images/map-nuit.jpg`)
+  fImg = loadImage(`./images/rocher.png`)
+  jImg = loadImage(`./images/${characterType}/jump.png`)
+  leftImg = loadImage(`./images/${characterType}/left.png`)
+  rightImg = loadImage(`./images/${characterType}/right.png`)
+  hImg = loadImage(`./images/${characterType}/dodge.png`)
+  bImg = loadImage(`./images/bird.png`)
 }
 function setup() {
   createCanvas(windowWidth, windowHeight);
