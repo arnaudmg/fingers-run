@@ -29,7 +29,7 @@ function keyPressed(){
     character.jump();
     character.setImage(jImg)
   }
-  if (keyCode === CONTROL) {
+  if (keyCode === SHIFT) {
     specialCheat = true
     character.setImage(hImg)
   }
