@@ -84,3 +84,7 @@ svg{
   margin-top: 10px;
   margin-right: 5px;
 }
+
+.play:hover{
+  text-decoration: none;
+}
