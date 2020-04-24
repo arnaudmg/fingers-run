@@ -15,10 +15,9 @@ if(localStorage.getItem("highscore") == null){
   // fake highscore for demo
   console.log("setting shit for PaaS")
   localStorage.setItem("highscore", JSON.stringify({
-    "jean": 470,
-    "frederic": 3,
-    "emmanuel":493,
-    "lea": 1,
-    "jc": 999,
+    "Frederic": 470,
+    "Louise": 367,
+    "Lena":300,
+    "Vichec":120,
   }))
 }
