@@ -7,7 +7,7 @@ function preloading(){
     document.querySelector("#preloader").style.display = "none";
 }
 
-// Globals variables
+
 
 //Available levels
 const levels = {

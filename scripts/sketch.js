@@ -1,3 +1,5 @@
+// Globals variables
+
 let hasStarted = false
 let character
 let characterImg
@@ -5,6 +7,7 @@ let fire = []
 let bird = []
 let characterType = localStorage.getItem("character") ? localStorage.getItem("character") : "coco" 
 let specialCheat = false
+
 function preload(){
   uImg = loadImage(`./images/${characterType}/middle.png`);
   bgImg = loadImage(`./images/map-nuit.jpg`)
@@ -15,10 +18,12 @@ function preload(){
   hImg = loadImage(`./images/${characterType}/dodge.png`)
   bImg = loadImage(`./images/bird.png`)
 }
+
 function setup() {
   createCanvas(windowWidth, windowHeight);
   character = new Character(uImg);
 }
+// Adapt full screen width
 function windowResized() {
 	resizeCanvas(windowWidth, windowHeight);
 }
